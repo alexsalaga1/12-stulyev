@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Мастерская «12 стульев» — Перетяжка и ремонт мебели в Краснодаре</title>
+  <meta name="description" content="Профессиональная перетяжка, покраска и ремонт мягкой мебели в Краснодаре. Мастерская «12 стульев» — дарим мебели вторую жизнь. ☎ +7 (962) 859-99-80. Pet-friendly!"/>
+  <meta name="keywords" content="перетяжка мебели Краснодар, ремонт мягкой мебели, покраска мебели, реставрация дивана, мастерская 12 стульев"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:title" content="Мастерская «12 стульев» — Перетяжка мебели в Краснодаре"/>
+  <meta property="og:description" content="Профессиональная перетяжка и ремонт мебели. Pet-friendly. ☎ +7 (962) 859-99-80"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://peretyazhka23.clients.site"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#FAF6F1; --surface:#F2EBE0; --wood-dark:#4A2E1A;
+      --wood-mid:#7B4F2E; --wood-light:#B07C50;
+      --amber:#C9843A; --amber-h:#A96A26;
+      --cream:#FFF8F0; --text:#2E1A0E; --muted:#7A6252; --border:#DDD0BF;
+      --fh:'Playfair Display',Georgia,serif; --fb:'Inter',system-ui,sans-serif;
+      --r8:8px; --r16:16px; --r24:24px;
+      --s1:0 2px 8px rgba(74,46,26,.08);
+      --s2:0 6px 24px rgba(74,46,26,.12);
+      --s3:0 16px 48px rgba(74,46,26,.18);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:none;}
+    img{max-width:100%;display:block;}
+    a{color:inherit;text-decoration:none;}
+
+    /* ── CUSTOM CURSOR (desktop only) ── */
+    #cur-dot,#cur-ring{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+    #cur-dot{width:8px;height:8px;background:var(--amber);top:0;left:0;transition:width .15s,height .15s;}
+    #cur-ring{width:36px;height:36px;border:1.5px solid rgba(201,132,58,.5);top:0;left:0;z-index:9998;transition:width .3s,height .3s,border-color .3s;}
+    .ch #cur-dot{width:14px;height:14px;}
+    .ch #cur-ring{width:52px;height:52px;border-color:rgba(201,132,58,.8);}
+    @media(max-width:768px){#cur-dot,#cur-ring{display:none;}body{cursor:auto;}}
+
+    /* ── SCROLL PROGRESS ── */
+    #spb{position:fixed;top:0;left:0;height:3px;z-index:9000;width:0%;
+      background:linear-gradient(90deg,var(--amber),var(--wood-light),var(--amber));
+      box-shadow:0 0 8px rgba(201,132,58,.6);transition:width .1s linear;}
+
+    /* ── NAV ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(250,246,241,.94);backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1120px;margin:0 auto;padding:0 20px;}
+    .nav-logo{font-family:var(--fh);font-size:1.15rem;font-weight:700;color:var(--wood-dark);}
+    .nav-logo span{color:var(--amber);}
+    .nav-links{display:flex;gap:24px;list-style:none;}
+    .nav-links a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color .2s;}
+    .nav-links a:hover{color:var(--wood-dark);}
+    .nav-phone{font-size:.88rem;font-weight:600;color:var(--amber);white-space:nowrap;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--wood-dark);border-radius:2px;transition:.3s;}
+    .mobile-nav{display:none;flex-direction:column;align-items:center;gap:18px;
+      padding:24px 20px 20px;background:rgba(250,246,241,.98);border-top:1px solid var(--border);}
+    .mobile-nav a{font-size:1rem;font-weight:500;color:var(--muted);}
+    .mobile-nav a:hover{color:var(--wood-dark);}
+    .mobile-nav .nav-phone{font-size:1rem;}
+    @media(max-width:768px){
+      .nav-links{display:none;}
+      .hamburger{display:flex;}
+      .nav-phone{display:none;}
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:10px;display:block;}
+    h1,h2,h3{font-family:var(--fh);line-height:1.2;}
+    h1{font-size:clamp(1.8rem,4.5vw,3.2rem);color:var(--cream);}
+    h2{font-size:clamp(1.5rem,3vw,2.2rem);color:var(--wood-dark);}
+    h3{font-size:1.1rem;color:var(--wood-dark);}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px;}
+    section{padding:72px 0;}
+    @media(max-width:600px){section{padding:52px 0;}}
+
+    /* ── BUTTONS ── */
+    .btn-p,.btn-s{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;
+      font-family:var(--fb);font-size:.92rem;font-weight:600;border-radius:var(--r8);border:none;
+      padding:14px 28px;transition:background .2s,transform .15s,box-shadow .2s;cursor:none;}
+    @media(max-width:768px){.btn-p,.btn-s{cursor:pointer;}}
+    .btn-p{background:var(--amber);color:#fff;box-shadow:0 4px 20px rgba(201,132,58,.4);}
+    .btn-p:hover{background:var(--amber-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,132,58,.5);}
+    .btn-s{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.4);backdrop-filter:blur(8px);}
+    .btn-s:hover{background:rgba(255,255,255,.25);transform:translateY(-2px);}
+    .ripple-wave{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);
+      transform:scale(0);animation:ripple .55s linear;pointer-events:none;}
+    @keyframes ripple{to{transform:scale(4);opacity:0;}}
+
+    /* ── HERO ── */
+    #hero{min-height:100vh;position:relative;display:flex;align-items:center;padding-top:64px;overflow:hidden;}
+    #hero-bg{position:absolute;inset:-40px;
+      background:url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1400&q=75') center/cover no-repeat;
+      will-change:transform;}
+    #hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(74,46,26,.86) 0%,rgba(74,46,26,.6) 100%);}
+    #hero-blob{position:absolute;right:-8%;top:8%;width:50vw;height:50vw;max-width:520px;max-height:520px;
+      opacity:.12;pointer-events:none;
+      background:radial-gradient(circle,rgba(201,132,58,.9),rgba(74,46,26,.4));
+      animation:blobM 12s ease-in-out infinite alternate;}
+    #hero-orb{position:absolute;bottom:-10%;left:55%;width:480px;height:480px;border-radius:50%;
+      background:radial-gradient(circle,rgba(201,132,58,.18) 0%,transparent 70%);
+      pointer-events:none;z-index:1;animation:orbD 14s ease-in-out infinite alternate;}
+    @keyframes blobM{
+      0%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%;}
+      50%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%;}
+      100%{border-radius:60% 40% 50% 50%/40% 60% 40% 60%;}
+    }
+    @keyframes orbD{0%{transform:translate(0,0);}50%{transform:translate(-60px,-40px);}100%{transform:translate(40px,30px);}}
+    canvas#hc{position:absolute;inset:0;pointer-events:none;}
+    .hf{position:absolute;pointer-events:none;opacity:0;}
+    .hf-sp{top:14%;right:7%;animation:fUp .8s ease .3s forwards,bobS 7s ease-in-out 1.1s infinite;}
+    .hf-nd{top:38%;right:13%;animation:fUp .8s ease .6s forwards,bobN 8s ease-in-out 1.4s infinite;}
+    .hf-fb{bottom:20%;left:5%;animation:fUp .8s ease .9s forwards,bobF 9s ease-in-out 1.7s infinite;}
+    .hf-s1{top:21%;left:57%;font-size:.9rem;animation:fUp .5s ease .4s forwards,twk 3s ease-in-out 1.2s infinite;}
+    .hf-s2{top:62%;right:27%;font-size:.9rem;animation:fUp .5s ease .7s forwards,twk 3.5s ease-in-out 1.5s infinite;}
+    @keyframes fUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes bobS{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-14px) rotate(8deg);}}
+    @keyframes bobN{0%,100%{transform:translateY(0) rotate(-15deg);}50%{transform:translateY(-18px) rotate(-3deg);}}
+    @keyframes bobF{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-10px) scale(1.05);}}
+    @keyframes twk{0%,100%{opacity:.6;transform:scale(1);}50%{opacity:1;transform:scale(1.5);}}
+    @keyframes wR{to{opacity:1;transform:translateY(0);}}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.9);font-size:.8rem;font-weight:500;
+      letter-spacing:.05em;padding:6px 14px;border-radius:100px;margin-bottom:24px;
+      backdrop-filter:blur(8px);opacity:0;animation:wR .5s ease .1s forwards;}
+    .hero-badge::before{content:"📍";}
+    .hero-content{max-width:660px;position:relative;z-index:2;}
+    .hero-content h1{opacity:0;animation:wR .7s ease .2s forwards;
+      animation:wR .7s ease .2s forwards,hGlow 5s ease-in-out 3s infinite;}
+    @keyframes hGlow{0%,100%{text-shadow:none;}50%{text-shadow:0 0 60px rgba(201,132,58,.35);}}
+    .hero-sub{font-size:1rem;color:rgba(255,255,255,.85);margin:18px 0 30px;line-height:1.65;
+      opacity:0;animation:wR .6s ease .5s forwards;}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;opacity:0;animation:wR .6s ease .7s forwards;}
+    .pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;
+      font-size:.78rem;font-weight:500;padding:5px 13px;border-radius:100px;transition:.2s;}
+    .pill:hover{background:rgba(255,255,255,.24);transform:translateY(-2px);}
+    .hero-btns{display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:wR .6s ease .9s forwards;}
+    .hero-stats{display:flex;flex-wrap:wrap;gap:24px;margin-top:48px;padding-top:28px;
+      border-top:1px solid rgba(255,255,255,.18);opacity:0;animation:wR .6s ease 1.1s forwards;}
+    .hs-item strong{display:block;font-size:1.8rem;font-family:var(--fh);color:#fff;line-height:1;}
+    .hs-item span{font-size:.75rem;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+    @media(max-width:600px){
+      .hero-btns{flex-direction:column;}
+      .hero-btns .btn-p,.hero-btns .btn-s{justify-content:center;width:100%;}
+      .hero-stats{gap:16px;}
+      .hs-item strong{font-size:1.5rem;}
+      #hero-blob,#hero-orb,.hf{display:none;}
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap{background:var(--wood-dark);padding:14px 0;overflow:hidden;}
+    .marquee-track{display:flex;gap:48px;white-space:nowrap;animation:marq 22s linear infinite;}
+    .marquee-item{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+      color:rgba(255,255,255,.75);display:flex;align-items:center;gap:10px;flex-shrink:0;}
+    .marquee-item::before{content:"✦";color:var(--amber);}
+    @keyframes marq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* ── SERVICES ── */
+    #services{background:var(--surface);}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+    .srv-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--r16);
+      padding:32px 28px;position:relative;overflow:hidden;
+      transition:box-shadow .25s,transform .25s,border-color .3s;cursor:none;}
+    @media(max-width:768px){.srv-card{cursor:auto;}}
+    .srv-card:hover{transform:translateY(-6px);border-color:rgba(201,132,58,.4);
+      box-shadow:0 8px 32px rgba(201,132,58,.15),var(--s3);}
+    .srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,var(--amber),var(--wood-light));}
+    .srv-card::after{content:'';position:absolute;inset:0;
+      background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.06) 50%,transparent 70%);
+      transform:translateX(-100%);transition:transform .5s;pointer-events:none;}
+    .srv-card:hover::after{transform:translateX(100%);}
+    .srv-icon{width:52px;height:52px;border-radius:var(--r8);
+      background:linear-gradient(135deg,var(--surface),var(--border));
+      display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:20px;
+      transition:transform .3s;}
+    .srv-card:hover .srv-icon{transform:scale(1.2) rotate(-8deg);}
+    .srv-card h3{margin-bottom:10px;}
+    .srv-card p{color:var(--muted);font-size:.88rem;line-height:1.65;}
+    .srv-card ul{margin-top:14px;list-style:none;display:flex;flex-direction:column;gap:6px;}
+    .srv-card li{font-size:.82rem;color:var(--muted);display:flex;align-items:flex-start;gap:8px;}
+    .srv-card li::before{content:"✓";color:var(--amber);font-weight:700;flex-shrink:0;}
+    .srv-price{display:inline-block;margin-top:16px;font-weight:600;font-size:.85rem;color:var(--amber);}
+    @media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:580px){.services-grid{grid-template-columns:1fr;}}
+
+    /* ── PORTFOLIO ── */
+    #portfolio{position:relative;overflow:hidden;}
+    #portfolio::before{content:'';position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(ellipse at 50% 0%,rgba(201,132,58,.06) 0%,transparent 60%);}
+    .port-hdr{text-align:center;max-width:580px;margin:0 auto 40px;}
+    .port-hdr p{color:var(--muted);margin-top:12px;font-size:.92rem;}
+    .port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;z-index:1;}
+    .port-item{border-radius:var(--r16);overflow:hidden;background:var(--cream);box-shadow:var(--s2);
+      transition:transform .3s,box-shadow .3s;}
+    .port-item:hover{transform:translateY(-6px) scale(1.01);box-shadow:var(--s3);}
+    /* Before/After slider */
+    .baw{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:ew-resize;user-select:none;touch-action:none;}
+    .ba-after,.ba-before{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+    .ba-before{clip-path:inset(0 50% 0 0);z-index:1;}
+    .ba-div{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;z-index:3;box-shadow:0 0 10px rgba(0,0,0,.4);pointer-events:none;}
+    .ba-hnd{position:absolute;top:50%;left:50%;z-index:4;transform:translate(-50%,-50%);
+      width:44px;height:44px;border-radius:50%;background:#fff;
+      box-shadow:0 2px 12px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;
+      pointer-events:none;transition:transform .2s;
+      animation:hndP 2.4s ease-in-out infinite;}
+    @keyframes hndP{0%,100%{box-shadow:0 2px 12px rgba(0,0,0,.3),0 0 0 0 rgba(201,132,58,0);}50%{box-shadow:0 2px 12px rgba(0,0,0,.3),0 0 0 8px rgba(201,132,58,.22);}}
+    .baw:active .ba-hnd{transform:translate(-50%,-50%) scale(1.15);}
+    .baw::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+      background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.16) 50%,transparent 60%);
+      background-size:200% 100%;animation:shmr 4s ease-in-out infinite;}
+    @keyframes shmr{0%{background-position:200% center;}60%,100%{background-position:-200% center;}}
+    .ba-lbls{position:absolute;inset:0;z-index:5;pointer-events:none;display:flex;justify-content:space-between;align-items:flex-start;padding:10px 12px;}
+    .ba-lbl{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px;color:#fff;backdrop-filter:blur(4px);}
+    .ba-lbl.bef{background:rgba(0,0,0,.55);}
+    .ba-lbl.aft{background:rgba(201,132,58,.9);}
+    .drag-tip{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:6;
+      pointer-events:none;background:rgba(0,0,0,.5);color:#fff;font-size:.68rem;font-weight:600;
+      padding:4px 11px;border-radius:100px;backdrop-filter:blur(4px);
+      animation:tipF 3s ease 1s forwards;}
+    @keyframes tipF{0%{opacity:1;}80%{opacity:1;}100%{opacity:0;}}
+    .port-meta{padding:12px 14px;}
+    .port-meta h4{font-size:.9rem;font-family:var(--fh);color:var(--wood-dark);margin-bottom:2px;}
+    .port-meta p{font-size:.76rem;color:var(--muted);}
+    .port-cta{text-align:center;margin-top:40px;position:relative;z-index:1;}
+    .port-cta p{color:var(--muted);margin-bottom:18px;font-size:.92rem;}
+    @media(max-width:900px){.port-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:540px){.port-grid{grid-template-columns:1fr;}}
+
+    /* ── ABOUT ── */
+    #about{background:var(--bg);position:relative;overflow:hidden;}
+    .paw{position:absolute;pointer-events:none;font-size:1.3rem;opacity:0;animation:pawF linear infinite;will-change:transform,opacity;}
+    @keyframes pawF{0%{transform:translateY(0) rotate(0deg) scale(.8);opacity:0;}10%{opacity:.7;}90%{opacity:.4;}100%{transform:translateY(-100vh) rotate(360deg) scale(1.1);opacity:0;}}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    .about-img{position:relative;}
+    .about-img-wrap{border-radius:var(--r24);overflow:hidden;box-shadow:var(--s3);aspect-ratio:4/5;}
+    .about-img-wrap img{width:100%;height:100%;object-fit:cover;}
+    .about-badge{position:absolute;bottom:-20px;right:-20px;background:var(--amber);color:#fff;
+      border-radius:var(--r16);padding:16px 20px;box-shadow:var(--s2);text-align:center;
+      animation:bdgB 4s ease-in-out infinite;}
+    @keyframes bdgB{0%,100%{transform:translateY(0) rotate(-3deg);}50%{transform:translateY(-8px) rotate(2deg);}}
+    .about-badge strong{display:block;font-size:1.4rem;font-family:var(--fh);}
+    .about-badge span{font-size:.72rem;opacity:.9;letter-spacing:.06em;}
+    .about-perks{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;}
+    .perk{display:flex;gap:12px;align-items:flex-start;}
+    .perk-ico{width:40px;height:40px;border-radius:var(--r8);background:var(--surface);
+      display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+    .perk-txt strong{display:block;font-size:.88rem;color:var(--wood-dark);margin-bottom:2px;}
+    .perk-txt span{font-size:.78rem;color:var(--muted);}
+    .pet-card{margin-top:28px;background:linear-gradient(135deg,#fff5e6,#ffecd2);
+      border:1.5px solid rgba(201,132,58,.3);border-radius:var(--r16);padding:22px;
+      display:flex;align-items:center;gap:16px;position:relative;overflow:hidden;}
+    .pet-card::before{content:'';position:absolute;inset:0;
+      background:linear-gradient(90deg,transparent,rgba(201,132,58,.06),transparent);
+      animation:petSh 3s ease-in-out infinite;}
+    @keyframes petSh{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
+    .pet-ico{font-size:2.6rem;flex-shrink:0;}
+    .pet-txt h4{font-family:var(--fh);font-size:1rem;color:var(--wood-dark);margin-bottom:4px;}
+    .pet-txt p{font-size:.8rem;color:var(--muted);line-height:1.5;}
+    @media(max-width:768px){
+      .about-grid{grid-template-columns:1fr;gap:36px;}
+      .about-badge{right:10px;bottom:-10px;}
+      .about-perks{grid-template-columns:1fr;}
+    }
+
+    /* ── STATS STRIP ── */
+    .stats-strip{background:var(--wood-dark);padding:48px 0;position:relative;overflow:hidden;}
+    .stats-strip::before{content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse at 50% 50%,rgba(201,132,58,.18),transparent 70%);pointer-events:none;}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;position:relative;z-index:1;}
+    .stat-num{font-family:var(--fh);font-size:2.4rem;color:var(--amber);font-weight:700;line-height:1;}
+    .stat-lbl{font-size:.78rem;color:rgba(255,255,255,.65);letter-spacing:.06em;margin-top:6px;}
+    @media(max-width:600px){.stats-grid{grid-template-columns:1fr 1fr;gap:24px;}.stat-num{font-size:2rem;}}
+
+    /* ── CONTACTS ── */
+    #contacts{background:var(--surface);position:relative;overflow:hidden;}
+    .contacts-ring{position:absolute;border-radius:50%;border:1px solid rgba(201,132,58,.12);
+      pointer-events:none;animation:cRing 8s ease-in-out infinite;}
+    @keyframes cRing{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.08);}}
+    .contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+    .contact-info{display:flex;flex-direction:column;gap:18px;}
+    .ci-row{display:flex;gap:14px;align-items:flex-start;}
+    .ci-icon{width:44px;height:44px;border-radius:var(--r8);background:var(--cream);
+      display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;box-shadow:var(--s1);}
+    .ci-label{font-size:.72rem;font-weight:600;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;}
+    .ci-val{font-size:.9rem;color:var(--text);font-weight:500;}
+    .ci-val a{color:var(--amber);text-decoration:none;}
+    .ci-val a:hover{text-decoration:underline;}
+    .map-wrap{border-radius:var(--r16);overflow:hidden;box-shadow:var(--s2);}
+    .map-wrap iframe{width:100%;height:300px;border:none;display:block;}
+    @media(max-width:768px){
+      .contacts-grid{grid-template-columns:1fr;gap:32px;}
+      .map-wrap iframe{height:240px;}
+    }
+
+    /* ── FLOATING CTA ── */
+    #fcta{position:fixed;bottom:24px;right:20px;z-index:200;
+      background:var(--amber);color:#fff;border:none;border-radius:100px;
+      padding:14px 22px;font-family:var(--fb);font-size:.85rem;font-weight:600;
+      box-shadow:0 6px 24px rgba(201,132,58,.55);cursor:pointer;
+      display:flex;align-items:center;gap:8px;
+      animation:fcBob 3s ease-in-out infinite;transition:transform .15s,background .2s;}
+    @keyframes fcBob{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+    #fcta:hover{background:var(--amber-h);transform:translateY(-3px) scale(1.04);}
+    @media(max-width:600px){#fcta{bottom:16px;right:12px;font-size:.78rem;padding:12px 16px;}}
+
+    /* ── FOOTER ── */
+    footer{background:var(--wood-dark);padding:32px 0;}
+    .foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    .foot-logo{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;}
+    .foot-logo span{color:var(--amber);}
+    .foot-links{display:flex;gap:20px;flex-wrap:wrap;}
+    .foot-links a{font-size:.8rem;color:rgba(255,255,255,.5);transition:color .2s;}
+    .foot-links a:hover{color:rgba(255,255,255,.9);}
+    .foot-copy{font-size:.75rem;color:rgba(255,255,255,.4);}
+
+    /* ── SCROLL REVEAL ── */
+    .sr{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s;}
+    .sr.in{opacity:1;transform:translateY(0);}
+  </style>
+</head>
+<body>
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+  <div id="spb"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">«12 <span>стульев</span>»</a>
+      <ul class="nav-links">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#portfolio">Портфолио</a></li>
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <a href="tel:+79628599980" class="nav-phone">+7 (962) 859-99-80</a>
+      <div class="hamburger" id="hbg" onclick="toggleNav()" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mnav">
+      <a href="#services" onclick="toggleNav()">Услуги</a>
+      <a href="#portfolio" onclick="toggleNav()">Портфолио</a>
+      <a href="#about" onclick="toggleNav()">О нас</a>
+      <a href="#contacts" onclick="toggleNav()">Контакты</a>
+      <a href="tel:+79628599980" class="nav-phone">+7 (962) 859-99-80</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div id="hero-bg"></div>
+    <div id="hero-overlay"></div>
+    <div id="hero-blob"></div>
+    <div id="hero-orb"></div>
+    <canvas id="hc"></canvas>
+    <svg class="hf hf-sp" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="20" fill="none" stroke="rgba(201,132,58,.7)" stroke-width="3"/><circle cx="30" cy="12" r="4" fill="rgba(201,132,58,.7)"/></svg>
+    <svg class="hf hf-nd" width="40" height="80" viewBox="0 0 40 80"><line x1="20" y1="5" x2="20" y2="75" stroke="rgba(255,255,255,.6)" stroke-width="2"/><circle cx="20" cy="8" r="6" fill="rgba(201,132,58,.8)"/></svg>
+    <svg class="hf hf-fb" width="50" height="50" viewBox="0 0 50 50"><polygon points="25,5 45,25 25,45 5,25" fill="rgba(201,132,58,.25)" stroke="rgba(201,132,58,.7)" stroke-width="2"/></svg>
+    <span class="hf hf-s1">✦</span>
+    <span class="hf hf-s2">✦</span>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Краснодар, ул. Крупской 2/2</div>
+        <h1 id="h1txt"></h1>
+        <p class="hero-sub">Перетяжка · Покраска · Ремонт мягкой мебели<br>Работаем с любовью к каждому предмету — от дивана до антиквариата</p>
+        <div class="hero-pills">
+          <span class="pill">🛋 Диваны и кресла</span>
+          <span class="pill">🎨 Покраска</span>
+          <span class="pill">🐾 Pet-Friendly</span>
+          <span class="pill">📸 Расчёт по фото</span>
+        </div>
+        <div class="hero-btns">
+          <a href="tel:+79628599980" class="btn-p">📞 Позвонить мастеру</a>
+          <a href="#portfolio" class="btn-s">Смотреть работы →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hs-item"><strong class="cnt" data-val="8">0</strong><span>лет опыта</span></div>
+          <div class="hs-item"><strong class="cnt" data-val="500">0</strong><span>работ выполнено</span></div>
+          <div class="hs-item"><strong class="cnt" data-val="98">0</strong><span>% довольных клиентов</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Перетяжка мебели</span>
+      <span class="marquee-item">Покраска мебели</span>
+      <span class="marquee-item">Ремонт мягкой мебели</span>
+      <span class="marquee-item">Pet-Friendly</span>
+      <span class="marquee-item">Гарантия качества</span>
+      <span class="marquee-item">Краснодар</span>
+      <span class="marquee-item">Перетяжка мебели</span>
+      <span class="marquee-item">Покраска мебели</span>
+      <span class="marquee-item">Ремонт мягкой мебели</span>
+      <span class="marquee-item">Pet-Friendly</span>
+      <span class="marquee-item">Гарантия качества</span>
+      <span class="marquee-item">Краснодар</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="sr" style="text-align:center;max-width:560px;margin:0 auto 48px;">
+        <span class="lbl">Что мы делаем</span>
+        <h2>Три направления мастерской</h2>
+        <p style="color:var(--muted);margin-top:12px;">Профессиональный подход, качественные материалы и гарантия результата</p>
+      </div>
+      <div class="services-grid">
+        <div class="srv-card sr" style="transition-delay:.05s">
+          <div class="srv-icon">🧵</div>
+          <h3>Перетяжка мебели</h3>
+          <p>Полная замена обивки с сохранением формы и конструкции. Работаем со всеми видами тканей и материалов.</p>
+          <ul>
+            <li>Диваны, кресла, пуфы</li>
+            <li>Велюр, флок, экокожа, рогожка</li>
+            <li>Замена наполнителя</li>
+            <li>Индивидуальный подбор ткани</li>
+          </ul>
+          <span class="srv-price">от 3 000 ₽</span>
+        </div>
+        <div class="srv-card sr" style="transition-delay:.12s">
+          <div class="srv-icon">🎨</div>
+          <h3>Покраска мебели</h3>
+          <p>Обновляем цвет и покрытие без замены обивки. Возвращаем яркость выцветшей мебели за 1–2 дня.</p>
+          <ul>
+            <li>Кожа и экокожа</li>
+            <li>Любой цвет по палитре RAL</li>
+            <li>Антивандальное покрытие</li>
+            <li>Ремонт царапин и потёртостей</li>
+          </ul>
+          <span class="srv-price">от 1 500 ₽</span>
+        </div>
+        <div class="srv-card sr" style="transition-delay:.19s">
+          <div class="srv-icon">🔧</div>
+          <h3>Ремонт мягкой мебели</h3>
+          <p>Чиним каркасы, пружины, механизмы. Устраняем скрипы и провалы. Даём мебели вторую жизнь.</p>
+          <ul>
+            <li>Ремонт каркаса и пружин</li>
+            <li>Ремонт механизмов раскладки</li>
+            <li>Замена фурнитуры и ножек</li>
+            <li>Устранение скрипов</li>
+          </ul>
+          <span class="srv-price">от 500 ₽</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="port-hdr sr">
+        <span class="lbl">Наши работы</span>
+        <h2>Галерея «До и После»</h2>
+        <p>Потяните ползунок — сразу увидите разницу. Лучший аргумент — результат.</p>
+      </div>
+      <div class="port-grid" id="pgrid">
+
+        <!-- 1. Кресло-кровать: before 1.jpg → posle/1.jpg -->
+        <div class="port-item sr" style="transition-delay:.05s">
+          <div class="baw" data-b="1.jpg" data-a="posle/1.jpg">
+            <img class="ba-after" src="posle/1.jpg" alt="Кресло после перетяжки" loading="lazy"/>
+            <img class="ba-before" src="1.jpg" alt="Кресло до перетяжки" loading="lazy"/>
+            <div class="ba-div"><div class="ba-hnd"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l-5 5 5 5M13 5l5 5-5 5" stroke="#C9843A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="ba-lbls"><span class="ba-lbl bef">До</span><span class="ba-lbl aft">После</span></div>
+            <div class="drag-tip">← тяните →</div>
+          </div>
+          <div class="port-meta"><h4>Кресло-кровать</h4><p>Перетяжка в розовый велюр</p></div>
+        </div>
+
+        <!-- 2. Диван розовый: before 9.jpg → posle/8.jpg -->
+        <div class="port-item sr" style="transition-delay:.1s">
+          <div class="baw" data-b="9.jpg" data-a="posle/8.jpg">
+            <img class="ba-after" src="posle/8.jpg" alt="Диван после перетяжки" loading="lazy"/>
+            <img class="ba-before" src="9.jpg" alt="Диван до перетяжки" loading="lazy"/>
+            <div class="ba-div"><div class="ba-hnd"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l-5 5 5 5M13 5l5 5-5 5" stroke="#C9843A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="ba-lbls"><span class="ba-lbl bef">До</span><span class="ba-lbl aft">После</span></div>
+            <div class="drag-tip">← тяните →</div>
+          </div>
+          <div class="port-meta"><h4>Диван трёхсекционный</h4><p>Розовый велюр, замена наполнителя</p></div>
+        </div>
+
+        <!-- 3. Угловой синий: before 6.jpg → posle/6.jpg -->
+        <div class="port-item sr" style="transition-delay:.15s">
+          <div class="baw" data-b="6.jpg" data-a="posle/6.jpg">
+            <img class="ba-after" src="posle/6.jpg" alt="Угловой диван после" loading="lazy"/>
+            <img class="ba-before" src="6.jpg" alt="Угловой диван до" loading="lazy"/>
+            <div class="ba-div"><div class="ba-hnd"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l-5 5 5 5M13 5l5 5-5 5" stroke="#C9843A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="ba-lbls"><span class="ba-lbl bef">До</span><span class="ba-lbl aft">После</span></div>
+            <div class="drag-tip">← тяните →</div>
+          </div>
+          <div class="port-meta"><h4>Угловой диван</h4><p>Синий флок, полная перетяжка</p></div>
+        </div>
+
+        <!-- 4. Плетёный диван: before 7.jpg → posle/3.jpg -->
+        <div class="port-item sr" style="transition-delay:.2s">
+          <div class="baw" data-b="7.jpg" data-a="posle/3.jpg">
+            <img class="ba-after" src="posle/3.jpg" alt="Плетёный диван после" loading="lazy"/>
+            <img class="ba-before" src="7.jpg" alt="Плетёный диван до" loading="lazy"/>
+            <div class="ba-div"><div class="ba-hnd"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l-5 5 5 5M13 5l5 5-5 5" stroke="#C9843A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="ba-lbls"><span class="ba-lbl bef">До</span><span class="ba-lbl aft">После</span></div>
+            <div class="drag-tip">← тяните →</div>
+          </div>
+          <div class="port-meta"><h4>Плетёный диван</h4><p>Новые подушки из уличной ткани</p></div>
+        </div>
+
+        <!-- 5. Садовые кресла: before 2.jpg → posle/9.jpg -->
+        <div class="port-item sr" style="transition-delay:.25s">
+          <div class="baw" data-b="2.jpg" data-a="posle/9.jpg">
+            <img class="ba-after" src="posle/9.jpg" alt="Садовые кресла после" loading="lazy"/>
+            <img class="ba-before" src="2.jpg" alt="Садовые кресла до" loading="lazy"/>
+            <div class="ba-div"><div class="ba-hnd"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l-5 5 5 5M13 5l5 5-5 5" stroke="#C9843A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="ba-lbls"><span class="ba-lbl bef">До</span><span class="ba-lbl aft">После</span></div>
+            <div class="drag-tip">← тяните →</div>
+          </div>
+          <div class="port-meta"><h4>Садовые кресла</h4><p>Коричневая экокожа</p></div>
+        </div>
+
+        <!-- 6. Фиолетовый → синий: before 8.jpg → posle/2.jpg -->
+        <div class="port-item sr" style="transition-delay:.3s">
+          <div class="baw" data-b="8.jpg" data-a="posle/2.jpg">
+            <img class="ba-after" src="posle/2.jpg" alt="Диван после перетяжки" loading="lazy"/>
+            <img class="ba-before" src="8.jpg" alt="Диван до перетяжки" loading="lazy"/>
+            <div class="ba-div"><div class="ba-hnd"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l-5 5 5 5M13 5l5 5-5 5" stroke="#C9843A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="ba-lbls"><span class="ba-lbl bef">До</span><span class="ba-lbl aft">После</span></div>
+            <div class="drag-tip">← тяните →</div>
+          </div>
+          <div class="port-meta"><h4>Диван-еврокнижка</h4><p>Смена цвета — фиолетовый → тёмно-синий</p></div>
+        </div>
+
+        <!-- 7. Комплект розовый: before 9.jpg → posle/4.jpg -->
+        <div class="port-item sr" style="transition-delay:.35s">
+          <div class="baw" data-b="9.jpg" data-a="posle/4.jpg">
+            <img class="ba-after" src="posle/4.jpg" alt="Комплект после" loading="lazy"/>
+            <img class="ba-before" src="9.jpg" alt="Диван до" loading="lazy"/>
+            <div class="ba-div"><div class="ba-hnd"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l-5 5 5 5M13 5l5 5-5 5" stroke="#C9843A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="ba-lbls"><span class="ba-lbl bef">До</span><span class="ba-lbl aft">Комплект</span></div>
+            <div class="drag-tip">← тяните →</div>
+          </div>
+          <div class="port-meta"><h4>Комплект: диван + кресло</h4><p>Оба предмета в едином стиле</p></div>
+        </div>
+
+        <!-- 8. Терраса ночью: before 2.jpg → posle/5.jpg -->
+        <div class="port-item sr" style="transition-delay:.4s">
+          <div class="baw" data-b="2.jpg" data-a="posle/5.jpg">
+            <img class="ba-after" src="posle/5.jpg" alt="Веранда после" loading="lazy"/>
+            <img class="ba-before" src="2.jpg" alt="Кресла до" loading="lazy"/>
+            <div class="ba-div"><div class="ba-hnd"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5l-5 5 5 5M13 5l5 5-5 5" stroke="#C9843A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+            <div class="ba-lbls"><span class="ba-lbl bef">До</span><span class="ba-lbl aft">После</span></div>
+            <div class="drag-tip">← тяните →</div>
+          </div>
+          <div class="port-meta"><h4>Обеденный комплект</h4><p>8 кресел, коричневая экокожа, веранда</p></div>
+        </div>
+
+      </div>
+      <div class="port-cta sr">
+        <p>Хотите обновить свою мебель? Пришлите фото — рассчитаем стоимость за 30 минут.</p>
+        <a href="tel:+79628599980" class="btn-p">📸 Отправить фото мастеру</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div><div class="stat-num cnt" data-val="8">0</div><div class="stat-lbl">Лет опыта</div></div>
+        <div><div class="stat-num cnt" data-val="500">0</div><div class="stat-lbl">Выполненных работ</div></div>
+        <div><div class="stat-num cnt" data-val="3">0</div><div class="stat-lbl">Дня — среднее время</div></div>
+        <div><div class="stat-num cnt" data-val="98">0</div><div class="stat-lbl">% довольных клиентов</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img sr">
+          <div class="about-img-wrap">
+            <img src="posle/6.jpg" alt="Работа мастерской" loading="lazy"/>
+          </div>
+          <div class="about-badge">
+            <strong>Константин</strong>
+            <span>Мастер</span>
+          </div>
+        </div>
+        <div class="sr" style="transition-delay:.1s">
+          <span class="lbl">О нас</span>
+          <h2>Мастерская с душой</h2>
+          <p style="color:var(--muted);margin:16px 0 24px;font-size:.95rem;line-height:1.75;">
+            Мастерская «12 стульев» — это место, где старая мебель получает вторую жизнь.
+            Мастер Константин работает в Краснодаре более 8 лет, выполнив свыше 500 заказов.
+            Каждый предмет — это отдельная история, и мы относимся к нему с уважением.
+          </p>
+          <div class="about-perks">
+            <div class="perk">
+              <div class="perk-ico">⚡</div>
+              <div class="perk-txt"><strong>Быстро</strong><span>Средний срок — 3 рабочих дня</span></div>
+            </div>
+            <div class="perk">
+              <div class="perk-ico">🏆</div>
+              <div class="perk-txt"><strong>Гарантия</strong><span>Гарантия на все виды работ</span></div>
+            </div>
+            <div class="perk">
+              <div class="perk-ico">💰</div>
+              <div class="perk-txt"><strong>Честные цены</strong><span>Расчёт по фото за 30 мин</span></div>
+            </div>
+            <div class="perk">
+              <div class="perk-ico">🚚</div>
+              <div class="perk-txt"><strong>Самовывоз</strong><span>Привезите или вызовите мастера</span></div>
+            </div>
+          </div>
+          <div class="pet-card">
+            <div class="pet-ico">🐾</div>
+            <div class="pet-txt">
+              <h4>Мастерская Pet-Friendly!</h4>
+              <p>Мы рады вашим питомцам — приходите с кошками, собаками или кем угодно ещё. Наша мастерская открыта для всей семьи, включая четвероногих её членов 🐶🐱🐰</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section id="contacts">
+    <div style="position:absolute;left:20%;top:50%;width:600px;height:600px;" class="contacts-ring"></div>
+    <div style="position:absolute;right:15%;top:30%;width:400px;height:400px;animation-delay:3s;" class="contacts-ring"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="sr" style="text-align:center;max-width:560px;margin:0 auto 48px;">
+        <span class="lbl">Свяжитесь с нами</span>
+        <h2>Контакты и график работы</h2>
+      </div>
+      <div class="contacts-grid">
+        <div class="contact-info sr">
+          <div class="ci-row">
+            <div class="ci-icon">👤</div>
+            <div><div class="ci-label">Мастер</div><div class="ci-val">Константин</div></div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">📞</div>
+            <div><div class="ci-label">Телефон</div><div class="ci-val"><a href="tel:+79628599980">+7 (962) 859-99-80</a></div></div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">🌐</div>
+            <div><div class="ci-label">Сайт</div><div class="ci-val"><a href="https://peretyazhka23.clients.site" target="_blank">peretyazhka23.clients.site</a></div></div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">📍</div>
+            <div><div class="ci-label">Адрес</div><div class="ci-val">г. Краснодар, жилой массив Пашковский, ул. Крупской 2/2</div></div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">🕐</div>
+            <div><div class="ci-label">График работы</div><div class="ci-val">Пн–Пт: 09:00–20:00<br><span style="color:var(--muted);">Сб–Вс: выходной</span></div></div>
+          </div>
+          <div class="ci-row">
+            <div class="ci-icon">💳</div>
+            <div><div class="ci-label">Оплата</div><div class="ci-val">Банковский перевод · Наличные</div></div>
+          </div>
+          <a href="tel:+79628599980" class="btn-p" style="align-self:flex-start;margin-top:8px;">📞 Позвонить сейчас</a>
+        </div>
+        <div class="sr" style="transition-delay:.1s">
+          <div class="map-wrap">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3A1&amp;source=constructor&amp;ll=39.102003%2C45.013440&amp;z=16&amp;pt=39.102003,45.013440,pm2rdl"
+              allowfullscreen loading="lazy" title="Мастерская на карте">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="foot-inner">
+        <div class="foot-logo">«12 <span>стульев</span>»</div>
+        <div class="foot-links">
+          <a href="#services">Услуги</a>
+          <a href="#portfolio">Портфолио</a>
+          <a href="#about">О нас</a>
+          <a href="#contacts">Контакты</a>
+        </div>
+        <div class="foot-copy">© 2025 Мастерская «12 стульев», Краснодар</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <button id="fcta" onclick="location.href='tel:+79628599980'">
+    📞 Позвонить
+  </button>
+
+  <script>
+  // ── CURSOR ──
+  const dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
+  let rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{
+    dot.style.left=e.clientX+'px'; dot.style.top=e.clientY+'px';
+    rx+=(e.clientX-rx)*.12; ry+=(e.clientY-ry)*.12;
+    ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  });
+  (function raf(){requestAnimationFrame(()=>{
+    ring.style.left=rx+'px'; ring.style.top=ry+'px';
+    raf();
+  });})();
+  document.querySelectorAll('a,button,.baw,.srv-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('ch'));
+  });
+
+  // ── SCROLL PROGRESS ──
+  const spb=document.getElementById('spb');
+  window.addEventListener('scroll',()=>{
+    const s=document.documentElement;
+    spb.style.width=(s.scrollTop/(s.scrollHeight-s.clientHeight)*100)+'%';
+  },{passive:true});
+
+  // ── MOBILE NAV ──
+  function toggleNav(){
+    const m=document.getElementById('mnav');
+    m.style.display=m.style.display==='flex'?'none':'flex';
+  }
+
+  // ── HERO PARALLAX ──
+  const hbg=document.getElementById('hero-bg');
+  window.addEventListener('scroll',()=>{
+    hbg.style.transform='translateY('+(window.scrollY*.3)+'px)';
+  },{passive:true});
+  // Mouse parallax (desktop)
+  document.getElementById('hero').addEventListener('mousemove',e=>{
+    const r=e.currentTarget.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    hbg.style.transform=`translate(${x*18}px,${y*12}px)`;
+  });
+
+  // ── TYPEWRITER ──
+  const txt='Мебель, которую вы\nлюбите — обновлённой';
+  const el=document.getElementById('h1txt');
+  let i=0;
+  function type(){
+    if(i<=txt.length){
+      el.innerHTML=txt.slice(0,i).replace(/\n/g,'<br>')+
+        (i<txt.length?'<span style="border-right:2px solid rgba(255,255,255,.7);animation:blink .6s step-end infinite"></span>':'');
+      i++;setTimeout(type,i===1?600:42);
+    }
+  }
+  setTimeout(type,400);
+  const bStyle=document.createElement('style');
+  bStyle.textContent='@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}';
+  document.head.appendChild(bStyle);
+
+  // ── CANVAS PARTICLES ──
+  const canvas=document.getElementById('hc');
+  const ctx=canvas.getContext('2d');
+  let W,H,particles=[];
+  function resizeCanvas(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  resizeCanvas();
+  window.addEventListener('resize',resizeCanvas);
+  for(let i=0;i<60;i++) particles.push({
+    x:Math.random()*2000,y:Math.random()*900,
+    r:Math.random()*2+.5,s:Math.random()*.4+.1,
+    a:Math.random()*Math.PI*2,op:Math.random()*.5+.1,
+    t:['dust','spark','thread'][Math.floor(Math.random()*3)]
+  });
+  function drawP(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{
+      p.y-=p.s; p.x+=Math.sin(p.a)*0.3; p.a+=.01;
+      if(p.y<-10){p.y=H+10;p.x=Math.random()*W;}
+      ctx.save(); ctx.globalAlpha=p.op;
+      if(p.t==='dust'){ctx.fillStyle='rgba(201,132,58,.8)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();}
+      else if(p.t==='spark'){ctx.strokeStyle='rgba(255,220,150,.6)';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x,p.y-5);ctx.stroke();}
+      else{ctx.strokeStyle='rgba(201,132,58,.3)';ctx.lineWidth=.5;ctx.beginPath();ctx.arc(p.x,p.y,p.r*2,0,Math.PI*2);ctx.stroke();}
+      ctx.restore();
+    });
+    requestAnimationFrame(drawP);
+  }
+  drawP();
+
+  // ── BEFORE/AFTER SLIDER ──
+  document.querySelectorAll('.baw').forEach(wrap=>{
+    const before=wrap.querySelector('.ba-before');
+    const div=wrap.querySelector('.ba-div');
+    let active=false;
+    function setPos(x){
+      const rect=wrap.getBoundingClientRect();
+      let pct=Math.min(Math.max((x-rect.left)/rect.width,0.02),0.98);
+      before.style.clipPath=`inset(0 ${(100-pct*100).toFixed(1)}% 0 0)`;
+      div.style.left=(pct*100).toFixed(1)+'%';
+    }
+    // Mouse
+    wrap.addEventListener('mousedown',e=>{active=true;setPos(e.clientX);});
+    window.addEventListener('mousemove',e=>{if(active)setPos(e.clientX);});
+    window.addEventListener('mouseup',()=>active=false);
+    // Touch
+    wrap.addEventListener('touchstart',e=>{active=true;setPos(e.touches[0].clientX);},{passive:true});
+    wrap.addEventListener('touchmove',e=>{
+      e.preventDefault();
+      if(active)setPos(e.touches[0].clientX);
+    },{passive:false});
+    wrap.addEventListener('touchend',()=>active=false);
+    // Drag hint removal
+    const hint=wrap.querySelector('.drag-tip');
+    wrap.addEventListener('mousedown',()=>{if(hint)hint.style.display='none';},{once:true});
+    wrap.addEventListener('touchstart',()=>{if(hint)hint.style.display='none';},{once:true,passive:true});
+  });
+
+  // ── SCROLL REVEAL ──
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}});
+  },{threshold:.12});
+  document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
+
+  // ── COUNTER ANIMATION ──
+  const cObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const el=e.target,target=+el.dataset.val;
+        let cur=0,step=target/60;
+        const t=setInterval(()=>{
+          cur+=step; if(cur>=target){cur=target;clearInterval(t);}
+          el.textContent=Math.floor(cur)+(el.textContent.includes('%')||target===98?'%':'+');
+        },20);
+        cObs.unobserve(el);
+      }
+    });
+  },{threshold:.5});
+  document.querySelectorAll('.cnt').forEach(el=>{
+    el.textContent='0';
+    cObs.observe(el);
+  });
+
+  // ── 3D TILT ──
+  document.querySelectorAll('.port-item,.srv-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(600px) rotateX(${-y*6}deg) rotateY(${x*6}deg) translateY(-6px)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='';});
+  });
+
+  // ── RIPPLE ──
+  document.querySelectorAll('.btn-p,.btn-s').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      const r=btn.getBoundingClientRect();
+      const s=Math.max(r.width,r.height);
+      const w=document.createElement('span');
+      w.className='ripple-wave';
+      w.style.cssText=`width:${s}px;height:${s}px;left:${e.clientX-r.left-s/2}px;top:${e.clientY-r.top-s/2}px`;
+      btn.appendChild(w);
+      setTimeout(()=>w.remove(),600);
+    });
+  });
+
+  // ── PAW PRINTS ──
+  const aboutEl=document.getElementById('about');
+  let pawCount=0;
+  const pawObs=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting&&pawCount<40){
+      const interval=setInterval(()=>{
+        if(pawCount>=40){clearInterval(interval);return;}
+        const p=document.createElement('div');
+        p.className='paw';
+        p.textContent=['🐾','🐾','🐾','🐶','🐱'][Math.floor(Math.random()*5)];
+        p.style.cssText=`left:${Math.random()*100}%;bottom:0;animation-duration:${4+Math.random()*6}s;animation-delay:${Math.random()*2}s;font-size:${1+Math.random()*.6}rem;`;
+        aboutEl.appendChild(p);
+        pawCount++;
+      },250);
+    }
+  },{threshold:.2});
+  pawObs.observe(aboutEl);
+  </script>
+</body>
+</html>
